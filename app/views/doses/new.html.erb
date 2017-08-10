@@ -1,0 +1,18 @@
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :description %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :ingredient %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+
+<!-- ce que nous cache le simple form url: cocktail_doses_path(@cocktail), method: :post -->
