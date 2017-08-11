@@ -1,8 +1,46 @@
-<p id="notice"><%= notice %></p>
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <a href="/" class="navbar-wagon-brand">
+    <img src="images/logo.png" alt="logo">
+  </a>
 
-<h1>Cocktails</h1>
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-<table>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Create a cocktail</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Display list</a>
+  </div>
+</div>
+
+
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://res.cloudinary.com/joan-pattar/image/upload/v1502448426/pexels-photo-110472_ouvwu1.jpg');">
+  <div class="banner-content">
+    <h1>Welcome and Chill in Moe's Bar</h1>
+    <p> Drink or create the tastiest cocktails</p>
+    <a class="btn btn-primary btn-lg">Become a genius barman</a>
+  </div>
+</div>
+
+
+<h1>Which cocktail would you want to check?</h1>
+
+<div class="container">
+  <div class="row">
+      <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-4">
+      <% if cocktail.photo? %>
+        <%= cl_image_tag cocktail.photo.path, width: 200, height: 300, crop: :fill %>
+      <% end %>
+     <p><%= cocktail.name.capitalize %></p>
+        <p><%= link_to '  Show', cocktail %> | <%= link_to '  Edit', edit_cocktail_path(cocktail) %> | <%= link_to '  Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+
+<!-- <table>
   <thead>
     <tr>
       <th>What cocktail would you want to check?</th>
@@ -20,8 +58,9 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
 
 <br>
 
 <%= link_to 'Add a new Cocktail', new_cocktail_path %>
+</div>

@@ -27,8 +27,8 @@ class DosesController < ApplicationController
 
   private
 
-  def dose_params
-  params.require(:dose).permit(:description, :ingredient_id)
+  def dose_params #strong params
+  params.require(:dose).permit(:description, :ingredient_id, :photo)
   #on récupère le cocktail_id dans l'url!
 end
 end
