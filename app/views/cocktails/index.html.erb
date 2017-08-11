@@ -6,18 +6,17 @@
   <thead>
     <tr>
       <th>What cocktail would you want to check?</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
-
+<br>
+<br>
   <tbody>
+  <tr></tr>
+  <tr></tr>
     <% @cocktails.each do |cocktail| %>
-      <tr> </tr>
       <tr>
-        <td><%= cocktail.name.capitalize %></td>
-        <td><%= link_to '  Show', cocktail %></td>
-        <td><%= link_to '  Edit', edit_cocktail_path(cocktail) %></td>
-        <td><%= link_to '  Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td> - <%= cocktail.name.capitalize %></td>
+        <td><%= link_to '  Show', cocktail %> | <%= link_to '  Edit', edit_cocktail_path(cocktail) %> | <%= link_to '  Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
